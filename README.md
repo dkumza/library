@@ -1,6 +1,7 @@
 # Library project
 
-created with:
-HTML
-CSS
-JavaScript
+## created with:
+
+[] HTML
+[] CSS
+[] JavaScript
