@@ -35,21 +35,33 @@ img {
 }
 
 #container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   margin: 0 auto;
   max-width: 1200px;
   padding: 60px 20px;
 }
 
 #library-wrap {
-  border: 3px solid rebeccapurple;
+  /* border: 3px solid rebeccapurple; */
   display: flex;
-  gap: 5px;
+  gap: 15px;
+  margin-top: 20px;
   /* margin: 40px 60px; */
 }
 
 .book {
-  border: 3px solid greenyellow;
+  border: 1px solid black;
+  border-radius: 10px;
   height: 240px;
   width: 200px;
+  line-height: 1.5;
+  padding: 15px;
+  /* text-transform: uppercase; */
+}
+
+.book-title {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
 }
