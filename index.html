@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <div id="header">
         <div class="h1">LIBRARY APP</div>
         <div class="h2">Welcome to the Library</div>
@@ -20,12 +20,29 @@
             <input type="text" id="title" />
             <label for="author">Author</label>
             <input type="text" id="author" />
-            <label for="year">Year</label>
-            <input type="number" id="number" min="1" />
+            <label for="date">Year</label>
+            <input type="date" id="number" />
             <label for="pages">Pages</label>
             <input type="number" id="pages" min="1" />
             <input type="button" value="Add Book" />
           </form>
+        </div>
+        <div id="library-wrap">
+          <!-- section with added books: -->
+          <div class="book">
+            <div class="tite">BOOK 1</div>
+            <div class="author">Author 1</div>
+            <div class="year">1999-04-10</div>
+            <div class="pages">224</div>
+            <div class="read">NO</div>
+          </div>
+          <div class="book">
+            <div class="tite">BOOK 1</div>
+            <div class="author">Author 1</div>
+            <div class="year">1999-04-10</div>
+            <div class="pages">224</div>
+            <div class="read">NO</div>
+          </div>
         </div>
       </div>
     </div>
