@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800;900&display=swap");
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -35,28 +37,31 @@ img {
 }
 
 #container {
-  /* border: 3px solid red; */
+  font-family: "Inter", sans-serif;
   margin: 0 auto;
   max-width: 1200px;
   padding: 60px 20px;
 }
 
+#header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 #library-wrap {
-  /* border: 3px solid rebeccapurple; */
   display: flex;
   gap: 15px;
   margin-top: 20px;
-  /* margin: 40px 60px; */
 }
 
 .book {
-  border: 1px solid black;
+  border: 1px solid rgb(219, 219, 219);
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   height: 240px;
   width: 200px;
   line-height: 1.5;
   padding: 15px;
-  /* text-transform: uppercase; */
 }
 
 .book-title {
@@ -64,4 +69,99 @@ img {
   font-size: 24px;
   text-transform: uppercase;
   text-align: center;
+}
+
+/* modal */
+
+#modal-wrap {
+  position: relative;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  padding: 20px;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#form {
+  margin-top: 20px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.btn {
+  border: 1px solid #dddddd;
+  width: 80px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #b5e7a0;
+  cursor: pointer;
+}
+
+#cancel {
+  background-color: #eca1a6;
+}
+
+#btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space {
+  margin-right: 10px;
 }

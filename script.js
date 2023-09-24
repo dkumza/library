@@ -7,18 +7,23 @@ const pages = document.querySelector("#pages");
 const read = document.querySelector("#read");
 const submit = document.querySelector("#submit");
 const inputs = document.querySelectorAll("input");
+// MODAL
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn-open");
+const closeModalBtn = document.querySelector("#cancel");
 
 // library selectors
 const library = document.querySelector("#library-wrap");
 
 const myLibrary = [
-  {
-    title: "The Hobbit",
-    author: "J. R. R. Tolkien",
-    year: "1937-09-21",
-    pages: 310,
-    read: "no",
-  },
+  //   {
+  //     title: "The Hobbit",
+  //     author: "J. R. R. Tolkien",
+  //     year: "1937-09-21",
+  //     pages: 310,
+  //     read: "no",
+  //   },
 ];
 
 function Book(title, author, year, pages, read) {
@@ -99,4 +104,21 @@ function createBook(item) {
   book.appendChild(bookRead);
 
   library.appendChild(book);
+  closeModal();
 }
+
+// MODAL
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+openModalBtn.addEventListener("click", openModal);
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
