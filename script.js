@@ -17,13 +17,13 @@ const closeModalBtn = document.querySelector("#cancel");
 const library = document.querySelector("#library-wrap");
 
 const myLibrary = [
-  //   {
-  //     title: "The Hobbit",
-  //     author: "J. R. R. Tolkien",
-  //     year: "1937-09-21",
-  //     pages: 310,
-  //     read: "no",
-  //   },
+  // {
+  //   title: "The Hobbit",
+  //   author: "J. R. R. Tolkien",
+  //   year: "1937-09-21",
+  //   pages: 310,
+  //   read: "Not Read",
+  // },
 ];
 
 function Book(title, author, year, pages, read) {
@@ -57,7 +57,7 @@ submit.addEventListener("click", (e) => {
   e.preventDefault();
   addBookToLibrary();
   noDublicate();
-  console.log(myLibrary);
+  //   console.log(myLibrary);
 });
 
 // prevent for dublicating from array
@@ -77,7 +77,9 @@ function createBook(item) {
   const bookAuthor = document.createElement("div");
   const bookYear = document.createElement("div");
   const bookPages = document.createElement("div");
-  const bookRead = document.createElement("div");
+  const bookRead = document.createElement("button");
+  const bookRemove = document.createElement("button");
+  const bookStatus = document.createElement("div");
 
   //   append elements
   book.setAttribute("id", myLibrary.indexOf(item));
@@ -99,9 +101,24 @@ function createBook(item) {
   bookPages.classList.add("book-pages");
   book.appendChild(bookPages);
 
-  bookRead.textContent = `Read: ${item.read}`;
-  bookRead.classList.add("book-read");
-  book.appendChild(bookRead);
+  bookStatus.textContent = "Status: ";
+  bookStatus.classList.add("book-status");
+  book.appendChild(bookStatus);
+
+  if (item.read === "Read") {
+    bookRead.textContent = item.read;
+    bookRead.classList.add("status");
+    bookStatus.appendChild(bookRead);
+  } else {
+    bookRead.textContent = item.read;
+    bookRead.classList.add("status", "status-n");
+    bookStatus.appendChild(bookRead);
+  }
+
+  bookRemove.textContent = "Remove";
+  bookRemove.classList.add("btn", "btn-center");
+  bookRemove.setAttribute("id", "cancel");
+  book.appendChild(bookRemove);
 
   library.appendChild(book);
   closeModal();

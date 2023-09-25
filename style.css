@@ -58,10 +58,12 @@ img {
   border: 1px solid rgb(219, 219, 219);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  height: 240px;
-  width: 200px;
+  /* height: 240px; */
+  width: 300px;
   line-height: 1.5;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-title {
@@ -69,6 +71,9 @@ img {
   font-size: 24px;
   text-transform: uppercase;
   text-align: center;
+}
+.book > #cancel {
+  margin-top: 10px;
 }
 
 /* modal */
@@ -84,7 +89,6 @@ img {
   align-self: center;
   padding: 20px;
   position: absolute;
-
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -153,6 +157,11 @@ textarea {
   cursor: pointer;
 }
 
+.btn-center {
+  display: block;
+  margin: 0 auto;
+}
+
 #cancel {
   background-color: #eca1a6;
 }
@@ -164,4 +173,16 @@ textarea {
 
 .space {
   margin-right: 10px;
+}
+
+.status {
+  width: 80px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b5e7a0;
+}
+
+.status-n {
+  background-color: #eca1a6;
 }
