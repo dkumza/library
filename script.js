@@ -57,7 +57,6 @@ submit.addEventListener("click", (e) => {
   e.preventDefault();
   addBookToLibrary();
   noDublicate();
-  //   console.log(myLibrary);
 });
 
 // prevent for dublicating from array
@@ -70,6 +69,7 @@ function noDublicate() {
   }
 }
 
+// create book DOM:
 function createBook(item) {
   // create elements
   const book = document.createElement("div");
@@ -116,10 +116,30 @@ function createBook(item) {
   }
 
   bookRemove.textContent = "Remove";
-  bookRemove.classList.add("btn", "btn-center");
+  bookRemove.classList.add("btn", "btn-center", "remove-book");
   bookRemove.setAttribute("id", "cancel");
   book.appendChild(bookRemove);
 
+  // remove book function
+  bookRemove.addEventListener("click", () => {
+    myLibrary.splice(myLibrary.indexOf(item), 1);
+    library.removeChild(book);
+    // noDublicate();
+  });
+
+  // change read status
+  bookRead.addEventListener("click", () => {
+    if (item.read === "Read") {
+      item.read = "Not Read";
+      bookRead.textContent = item.read;
+      bookRead.classList.add("status-n");
+    } else {
+      item.read = "Read";
+      bookRead.textContent = item.read;
+      bookRead.classList.remove("status-n");
+      bookRead.classList.add("status");
+    }
+  });
   library.appendChild(book);
   closeModal();
 }

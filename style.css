@@ -182,6 +182,9 @@ textarea {
   border-radius: 5px;
   background-color: #b5e7a0;
 }
+.status:hover {
+  cursor: pointer;
+}
 
 .status-n {
   background-color: #eca1a6;
